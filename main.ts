@@ -193,7 +193,6 @@ namespace MQTT {
             }
             payload += "field" + (i + 1) + "=" + fields[i];
         }
-        payload += "status=MQTTPUBLISH";
         MQTTPub(ThingSpeakTopic, payload);
     }
 }
