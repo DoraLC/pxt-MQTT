@@ -188,7 +188,10 @@ namespace MQTT {
         let ThingSpeakTopic: string = "channels/" + id + "/publish/" + api;
         let payload: string = "";
         for (let i = 0; i < fields.length; i++) {
-            payload += "field" + (i + 1) + "=" + fields[i] + "&";
+            if(i>0){
+                payload += "&"
+            }
+            payload += "field" + (i + 1) + "=" + fields[i];
         }
         payload += "status=MQTTPUBLISH";
         MQTTPub(ThingSpeakTopic, payload);
